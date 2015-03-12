@@ -14,6 +14,7 @@ import unittest, sys
 
 
 class SwanTest(unittest.TestCase):
+    """A test case for the problem.  Not used anymore."""
     def setUp(s):
         with open('sample_paths.txt', 'r') as f:
             c = f.read()
@@ -50,8 +51,12 @@ class JetStream:
 
 
 def dijkstra(first_jet_streams, jet_stream_list, adj_list, last_mile, default_path_cost):
-    """Implementation of Dijkstra's algorithm using a sorted list of nodes
-    to compute a shortest path between a pair of nodes"""
+    """
+    Implementation of Dijkstra's algorithm using a sorted list of nodes
+    to compute a shortest path between a pair of nodes
+
+    Returns the energy used, and the optimal path
+    """
     # Choose a source
     source = first_jet_streams[0]
     # Create our priority queue of pathLength
@@ -84,6 +89,9 @@ def dijkstra(first_jet_streams, jet_stream_list, adj_list, last_mile, default_pa
 
 
 def parse_input_file():
+    """
+    Parses the input file, and returns a tuple of information.
+    """
     min_start = sys.maxsize
     adj_list = dict()
     last_mile = 0
