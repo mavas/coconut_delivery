@@ -50,7 +50,7 @@ class JetStream:
         return (self.__start, self.__end, self.__energy, self.path_energy).__str__()
 
 
-def dijkstra(first_jet_streams, jet_stream_list, adj_list, last_mile, default_path_cost):
+def dijkstra_swan(first_jet_streams, jet_stream_list, adj_list, last_mile, default_path_cost):
     """
     Implementation of Dijkstra's algorithm using a sorted list of nodes
     to compute a shortest path between a pair of nodes
@@ -140,7 +140,7 @@ def find_shortest_path():
     Returns the energy consumed, and the sequence of jet streams used.
     """
     default_path_cost, jet_stream_list, first_jet_streams, adj_list, last_mile = parse_input_file()
-    e, j = dijkstra(first_jet_streams, jet_stream_list, adj_list, last_mile, default_path_cost)
+    e, j = dijkstra_swan(first_jet_streams, jet_stream_list, adj_list, last_mile, default_path_cost)
     return (e, j)
 
 
